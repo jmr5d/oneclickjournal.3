@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  altitude: 9.99
+  latitude: 9.99
+  longitude: 9.99
+  happened_at: 2015-12-25 14:06:47
+  user_id: 
+
+two:
+  altitude: 9.99
+  latitude: 9.99
+  longitude: 9.99
+  happened_at: 2015-12-25 14:06:47
+  user_id: 
