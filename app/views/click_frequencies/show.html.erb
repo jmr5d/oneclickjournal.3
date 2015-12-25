@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @click_frequency.user %>
+</p>
+
+<p>
+  <strong>Click count:</strong>
+  <%= @click_frequency.click_count %>
+</p>
+
+<%= link_to 'Edit', edit_click_frequency_path(@click_frequency) %> |
+<%= link_to 'Back', click_frequencies_path %>
