@@ -1,27 +1,36 @@
-<h1>Listing click_frequencies</h1>
-
-<table>
+<%- model_class = ClickFrequency -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => ClickFrequency %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Click count</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:click_count) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @click_frequencies.each do |click_frequency| %>
       <tr>
-        <td><%= click_frequency.user %></td>
+        <td><%= click_frequency.id %></td>
         <td><%= click_frequency.click_count %></td>
-        <td><%= link_to 'Show', click_frequency %></td>
-        <td><%= link_to 'Edit', edit_click_frequency_path(click_frequency) %></td>
-        <td><%= link_to 'Destroy', click_frequency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l click_frequency.created_at, format: :long %></td>
+        <td>
+          <%= link_to click_frequency_path(click_frequency), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to click_frequency_path(click_frequency), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Click frequency', new_click_frequency_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_click_frequency_path,
+            :class => 'btn btn-primary' %>

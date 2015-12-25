@@ -1,6 +1,5 @@
-<h1>Editing click_frequency</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @click_frequency %> |
-<%= link_to 'Back', click_frequencies_path %>
+<%- model_class = ClickFrequency -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => ClickFrequency %></h1>
+</div>
+<%= render :partial => 'form' %>
