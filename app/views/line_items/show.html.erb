@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @line_item.value %>
+</p>
+
+<p>
+  <strong>Measure unit:</strong>
+  <%= @line_item.measure_unit %>
+</p>
+
+<p>
+  <strong>Measure name:</strong>
+  <%= @line_item.measure_name %>
+</p>
+
+<p>
+  <strong>Measurement:</strong>
+  <%= @line_item.measurement %>
+</p>
+
+<%= link_to 'Edit', edit_line_item_path(@line_item) %> |
+<%= link_to 'Back', line_items_path %>
