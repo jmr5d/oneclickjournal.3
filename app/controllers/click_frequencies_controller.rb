@@ -29,6 +29,7 @@ class ClickFrequenciesController < ApplicationController
   # POST /click_frequencies.json
   def create
     @click_frequency = ClickFrequency.new(click_frequency_params)
+    @click_frequency.user = current_user
 
     respond_to do |format|
       if @click_frequency.save
