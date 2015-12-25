@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :measure_names
+
   resources :line_items
 
   resources :measurements
